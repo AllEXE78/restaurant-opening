@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Ubuntu:wght@500;700&display=swap" rel="stylesheet"> 
+   <link rel="stylesheet" href="css/style.css">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <title>Healthy Food Restaurant</title>
+</head>
+
+<body>
+   <!-- SVG Sprites -->
+   <svg display="none">
+      <symbol id="facebook" viewBox="0 0 100 100">
+         <g>
+            <path d="m50 0a50 50 0 0 0-50 50 50 50 0 0 0 50 50 50 50 0 0 0 50-50 50 50 0 0 0-50-50zm4.7615 19.386 9.7686 0.04143v10.878h-7.0875c-1.1627 0-2.7995 0.57996-2.7995 3.054v6.5962h9.8574l-1.1541 11.198h-8.7032v31.889h-13.19v-31.889h-6.2707v-11.21h6.2707v-7.2502c0-5.1863 2.4657-13.308 13.308-13.308z"/>
+         </g>
+      </symbol>
+      <symbol id="twitter" viewBox="0 0 100 100">
+         <g>
+            <path d="m50 0c-27.614 0-50 22.386-50 50 0 27.614 22.386 50 50 50 27.614 0 50-22.386 50-50 0-27.614-22.386-50-50-50zm9.6063 29.345c2.8393-0.04824 5.6873 1.0552 7.7859 3.2869 2.3363-0.46094 4.5768-1.3173 6.6248-2.5321-0.7786 2.4154-2.4082 4.466-4.5859 5.7697 2.0679-0.24419 4.0871-0.7974 5.9913-1.6411-1.4009 2.0949-3.163 3.9227-5.2044 5.3994 0.03018 0.44744 0.02974 0.89665 0.02974 1.3483 0 13.785-10.494 29.681-29.68 29.681v-0.0086c-5.6684 0.0079-11.219-1.6161-15.989-4.6775 0.82418 0.09868 1.653 0.14902 2.4828 0.15033 4.6986 0.0052 9.2612-1.5711 12.955-4.4739-4.4628-0.08418-8.3787-2.9952-9.7457-7.2441 1.5633 0.30047 3.1742 0.2393 4.7096-0.1793-4.8674-0.98325-8.3671-5.2601-8.3684-10.226v-0.13232c1.4507 0.8093 3.0746 1.2572 4.7347 1.306-4.5837-3.0609-5.9986-9.1587-3.2298-13.925 5.2967 6.5167 13.111 10.478 21.499 10.898-0.84093-3.6223 0.30907-7.4186 3.0184-9.9665 1.9692-1.8517 4.4671-2.791 6.9724-2.8336z"/>
+         </g>
+      </symbol>
+      <symbol id="istagram" viewBox="0 0 100 100">
+         <g>
+            <path d="m50 0a50 50 0 0 0-50 50 50 50 0 0 0 50 50 50 50 0 0 0 50-50 50 50 0 0 0-50-50zm0 21.671c7.9113 0 8.9029 0.03295 12.01 0.17459 3.1007 0.14167 5.2184 0.63403 7.0711 1.3545 1.9157 0.74405 3.5405 1.741 5.1606 3.3605 1.619 1.6196 2.6149 3.2433 3.359 5.159 0.72052 1.8526 1.2129 3.9704 1.3545 7.071 0.14165 3.1071 0.1754 4.0995 0.1754 12.011 0 7.9118-0.03364 8.9037-0.1754 12.011-0.14167 3.1002-0.63402 5.2179-1.3545 7.071-0.74404 1.9152-1.7399 3.5402-3.359 5.1598-1.6201 1.6196-3.2449 2.6152-5.1606 3.3597-1.8526 0.71999-3.9704 1.2126-7.0711 1.3538-3.1071 0.14165-4.0988 0.17536-12.01 0.17536-7.9118 0-8.9037-0.03364-12.011-0.17536-3.1007-0.14106-5.2179-0.63376-7.071-1.3537-1.9157-0.74457-3.5402-1.7402-5.1598-3.3597-1.6196-1.6196-2.6152-3.2447-3.3597-5.1598-0.71999-1.8532-1.2134-3.9709-1.3545-7.071-0.14165-3.1071-0.17461-4.099-0.17461-12.011 0-7.9113 0.03295-8.9037 0.17461-12.011 0.14111-3.1007 0.63456-5.2184 1.3545-7.071 0.74457-1.9157 1.7402-3.5395 3.3597-5.159 1.6196-1.6196 3.2441-2.6165 5.1598-3.3605 1.8532-0.72052 3.9704-1.2129 7.071-1.3545 3.1071-0.14167 4.099-0.17459 12.011-0.17459zm0 5.2483c-7.7787 0-8.6994 0.02989-11.771 0.1699-2.8404 0.12939-4.3828 0.60425-5.4096 1.003-1.3598 0.52864-2.3297 1.1597-3.3496 2.179-1.0193 1.0193-1.6504 1.9906-2.179 3.3504-0.39875 1.0263-0.8731 2.5684-1.003 5.4088-0.14003 3.0713-0.16992 3.993-0.16992 11.771 0 7.7787 0.02985 8.6994 0.16992 11.771 0.12989 2.8404 0.60425 4.3828 1.003 5.4096 0.52863 1.3598 1.1602 2.3295 2.179 3.3488 1.0198 1.0198 1.9898 1.6512 3.3496 2.1798 1.0268 0.39927 2.5692 0.87311 5.4096 1.003 3.0713 0.14 3.992 0.1691 11.771 0.1691 7.7787 0 8.6994-0.02921 11.771-0.1691 2.8399-0.12988 4.3825-0.60372 5.4088-1.003 1.3598-0.52864 2.3302-1.16 3.3496-2.1798 1.0193-1.0193 1.6512-1.989 2.1798-3.3488 0.39874-1.0268 0.87285-2.5692 1.0022-5.4096 0.14004-3.0718 0.1699-3.9925 0.1699-11.771 0-7.7782-0.02989-8.6999-0.1699-11.771-0.12936-2.8404-0.60347-4.3825-1.0022-5.4088-0.52863-1.3598-1.1605-2.331-2.1798-3.3504-1.0193-1.0193-1.9898-1.6504-3.3496-2.179-1.0263-0.39874-2.5689-0.87362-5.4088-1.003-3.0718-0.14-3.993-0.1699-11.771-0.1699zm15.55 4.8364c1.9307 0 3.496 1.5653 3.496 3.496 0 1.9306-1.5653 3.4952-3.496 3.4952-1.9307 0-3.496-1.5646-3.496-3.4952 0-1.9307 1.5653-3.496 3.496-3.496zm-15.55 4.0871c8.2614 0 14.959 6.6973 14.959 14.959 0 8.2619-6.6973 14.96-14.959 14.96-8.2619 0-14.96-6.6976-14.96-14.96 0-8.2614 6.6976-14.959 14.96-14.959zm0 5.2491c-5.3633 0-9.7105 4.3469-9.7105 9.7097 0 5.3627 4.3472 9.7105 9.7105 9.7105 5.3628 0 9.7097-4.3477 9.7097-9.7105 0-5.3628-4.3469-9.7097-9.7097-9.7097z"/>
+         </g>
+      </symbol>
+   </svg>   
+   <!--  -->
+
+<div class="wrapper">
+    <header class="header">
+        <div class="header__container _container">
+           <div class="header__body">
+              <div class="header__logo">
+                 <a href="" class="header__logo-link"><img src="img/header/Logo.png" alt="logo" class="header__logo-image"></a>                  
+              </div>
+              <nav class="header__nav">
+                 <ul class="header__list menu-list">
+                    <li class="menu-list__item">
+                       <a href="" class="menu-list__link">home</a>
+                    </li>
+                    <li class="menu-list__item">
+                     <a href="" class="menu-list__link">our menu</a>
+                     </li>
+                     <li class="menu-list__item">
+                        <a href="" class="menu-list__link">promo</a>
+                     </li>
+                     <li class="menu-list__item">
+                        <a href="" class="menu-list__link">order</a>
+                     </li>
+                 </ul>
+              </nav>
+           </div>
+
+        </div>
+    </header>
+    <div class="top_background">
+         <div class="top_background__box">
+            <div class="top_background__images-box">
+               <img src="img/dots/dotsv_white.svg" alt="dots" class="top_background__image1">
+               <img src="img/dots/dotsh_white.svg" alt="dots" class="top_background__image2">
+            </div>
+         </div>
+         <img src="img/bg/TopBgWave_1.svg" alt="cover" class="top_background__cover-image">
+    </div>
+    <main class="main-page">
+       <section class="top-page">
+          <div class="top-page__body">
+             <h1 class="top-page__title">Healthy Food Restaurant</h1>
+             <div class="top-page__subtitle">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</div>           
+            </div>          
+       </section>
+       <section class="popular-menu">
+         <div class="popular-menu__background">
+            <img src="img/dots/dotsh_gray.svg" alt="dots" class="popular-menu__background-image">
+         </div>
+         <div class="popular-menu__container _container">
+            <h2 class="popular-menu__title">Popular menu</h2>
+            <div class="popular-menu__body">
+               <div class="popular-menu__column">
+                  <a href="" class="popular-menu__item popular-item">
+                        <div class="popular-item__image-box">
+                           <img src="img/popular/5407.jpg" alt="" class="popular-item__image">
+                        </div>
+                        <div class="popular-item__bottom-box">
+                           <h3 class="popular-item__title">Noodles</h3>
+                           <div class="popular-item__text">Lorem ipsum dolor sit amet, consectetur adipisicing...</div>
+                           <div class="popular-item__price">$13</div>   
+                        </div>                        
+                  </a>
+               </div>
+               <div class="popular-menu__column">
+                  <a href="" class="popular-menu__item popular-item">
+                        <div class="popular-item__image-box">
+                           <img src="img/popular/5489.jpg" alt="" class="popular-item__image">
+                        </div>
+                        <div class="popular-item__bottom-box">
+                           <h3 class="popular-item__title">Noodles</h3>
+                           <div class="popular-item__text">Lorem ipsum dolor sit amet, consectetur adipisicing...</div>
+                           <div class="popular-item__price">$13</div>   
+                        </div>                        
+                  </a>
+               </div>
+               <div class="popular-menu__column">
+                  <a href="" class="popular-menu__item popular-item">
+                        <div class="popular-item__image-box">
+                           <img src="img/popular/5497.jpg" alt="" class="popular-item__image">
+                        </div>
+                        <div class="popular-item__bottom-box">
+                           <h3 class="popular-item__title">Noodles</h3>
+                           <div class="popular-item__text">Lorem ipsum dolor sit amet, consectetur adipisicing...</div>
+                           <div class="popular-item__price">$13</div>   
+                        </div>
+                  </a>
+               </div>
+            </div>
+            <div class="popular-menu__bottom">
+               <a href="" class="popular-menu__show-button button-link">Show More</a>
+            </div>            
+         </div>
+       </section>
+       <section class="events">          
+         <div class="events__body">
+             <div class="events__item">
+                <div class="events__column-image">
+                   <div class="events__image-box">
+                      <img src="img/events/5648.jpg" alt="" class="events__image">
+                      <img src="img/dots/dotsh_gray.svg" alt="dots" class="events__background-image1">                   
+                   </div>                   
+                </div>
+                <div class="events__column-text">
+                   <div class="events__text-box">
+                     <h2 class="events__title">Discount up to<br/> 50% All Menu</h2>
+                     <div class="events__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. A unde repellendus quaerat, recusandae exercitationem accusantium ad quisquam molestias impedit est voluptatibus quos rem minima atque, illum voluptates veniam dignissimos distinctio.</div>
+                     <div class="events__button-box">
+                        <a href="" class="events__button-link button-link">Read More</a>
+                     </div>
+                  </div>
+                </div>                
+             </div>
+            <div class="events__item">                
+                <div class="events__column-text">
+                   <div class="events__text-box">
+                     <h2 class="events__title">January’s Promo:<br/> Buy 1 Get 1 Free!</h2>
+                     <div class="events__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. A unde repellendus quaerat, recusandae exercitationem accusantium ad quisquam molestias impedit est voluptatibus quos rem minima atque, illum voluptates veniam dignissimos distinctio.</div>
+                     <div class="events__button-box">
+                        <a href="" class="events__button-link button-link">Read More</a>
+                     </div>
+                  </div>
+                </div>
+                <div class="events__column-image">
+                  <div class="events__image-box">
+                     <img src="img/events/5649.jpg" alt="" class="events__image">
+                     <img src="img/dots/dotsh_white.svg" alt="dots" class="events__background-image2">
+                  </div>                   
+               </div>                
+             </div>
+          </div>
+       </section>
+       <section class="howtoorder">
+          <div class="howtoorder__container _container">
+             <h2 class="howtoorder__title">How to order</h2>
+             <div class="howtoorder__body">
+                <div class="howtoorder__column">
+                   <div class="howtoorder__item">
+                     <div class="howtoorder__item-circle">
+                        <span class="howtoorder__item-num">01</span>
+                     </div>
+                     <h3 class="howtoorder__item-title">Order</h3>
+                     <div class="howtoorder__item-text">Lorem ipsum dolor sit amet, consecte sectetur adipisicing elit, tation omne ullamco laboris nisi ut aliqolore.</div>
+                   </div>                  
+                </div>
+                <div class="howtoorder__column">
+                   <div class="howtoorder__item">
+                     <div class="howtoorder__item-circle">
+                        <span class="howtoorder__item-num">02</span>
+                     </div>
+                     <h3 class="howtoorder__item-title">Choose Menu</h3>
+                     <div class="howtoorder__item-text">Lorem ipsum dolor sit amet, consecte sectetur adipisicing elit, tation omne ullamco laboris nisi ut aliqolore.</div>
+                   </div>                  
+                </div>
+                <div class="howtoorder__column">
+                  <div class="howtoorder__item">
+                    <div class="howtoorder__item-circle">
+                       <span class="howtoorder__item-num">03</span>
+                    </div>
+                    <h3 class="howtoorder__item-title">Delivery</h3>
+                    <div class="howtoorder__item-text">Lorem ipsum dolor sit amet, consecte sectetur adipisicing elit, tation omne ullamco laboris nisi ut aliqolore.</div>
+                  </div>                  
+                 </div>
+              </div>
+          </div>
+
+       </section>
+       <section class="free-delivery">
+         <div class="free-delivery__container">
+            <img src="img/free/5650.jpg" alt="cover" class="free-delivery__background-cover"> 
+            <div class="free-delivery__dots-images">
+               <img src="img/dots/dotsh_white.svg" alt="dots" class="free-delivery__background-image1">
+               <img src="img/dots/dotsh_gray.svg" alt="dots" class="free-delivery__background-image2">
+            </div>
+            <div class="free-delivery__body">            
+               <h2 class="free-delivery__title">Free Delivery</h2>
+                <div class="free-delivery__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
+                <div class="free-delivery__button-box">
+                  <a href="" class="free-delivery__button button-link">GET VOUCHER</a>
+                </div>
+             </div>
+         </div>
+       </section>
+       <div class="bottom-page">
+         <div class="bottom_background">
+            <div class="bottom_background__dots-block">
+               <img src="img/dots/dotsh_gray.svg" alt="dots" class="bottom_background__dots">
+            </div>
+            <img src="img/bg/TopBgWave_1.svg" alt="cover" class="bottom_background__cover-image">
+         </div>       
+         <div class="bottom-page__container _container">
+            <h2 class="bottom-page__title">“</h2>
+            <div class="bottom-page__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</div>
+            <div class="bottom-page__post-title">Agus Waiters</div>
+            <div class="bottom-page__social-links">   
+
+               <div class="bottom-page__item-link">
+                  <a href="" class="bottom-page__link">
+                     <svg class="bottom-page__link-svg">
+                        <use xlink:href="#facebook"></use>
+                     </svg>
+                  </a>
+               </div>
+               <div class="bottom-page__item-link">
+                  <a href="" class="bottom-page__link">
+                     <svg class="bottom-page__link-svg">
+                        <use xlink:href="#twitter"></use>
+                     </svg>
+                  </a>
+               </div>
+               <div class="bottom-page__item-link">
+                  <a href="" class="bottom-page__link">
+                     <svg class="bottom-page__link-svg">
+                        <use xlink:href="#istagram"></use>
+                     </svg>
+                  </a>
+               </div>
+            </div>
+          </div>
+         </div>
+    </main>
+    <footer class="footer">
+      <div class="footer__container _container">
+         <div class="footer__body">
+            <div class="footer__column1">
+               <div class="footer__about-block">
+                  <h3 class="footer__about-title">about</h3>
+                  <div class="footer__about-text">Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididunt ultimam quantum</div>
+               </div>
+            </div>
+            <div class="footer__column2">
+               <nav class="footer__links-nav">
+                  <div class="footer__links-column about-links-item">
+                     <h4 class="about-links-item__title">about</h4>                     
+                     <ul class="about-links-item__list">
+                        <li class="about-links-item__link-item">
+                           <a href="" class="about-links-item__link">Team</a>
+                        </li>
+                        <li class="about-links-item__link-item">
+                           <a href="" class="about-links-item__link">Join us</a>
+                        </li>
+                        <li class="about-links-item__link-item">
+                           <a href="" class="about-links-item__link">Ethic</a>
+                        </li>
+                        <li class="about-links-item__link-item">
+                           <a href="" class="about-links-item__link">Goals</a>
+                        </li>
+                     </ul>                     
+                  </div>
+                  <div class="footer__links-column about-links-item">
+                     <h4 class="about-links-item__title">about</h4>                     
+                     <ul class="about-links-item__list">
+                        <li class="about-links-item__link-item">
+                           <a href="" class="about-links-item__link">Team</a>
+                        </li>
+                        <li class="about-links-item__link-item">
+                           <a href="" class="about-links-item__link">Join us</a>
+                        </li>
+                        <li class="about-links-item__link-item">
+                           <a href="" class="about-links-item__link">Ethic</a>
+                        </li>
+                        <li class="about-links-item__link-item">
+                           <a href="" class="about-links-item__link">Goals</a>
+                        </li>
+                     </ul>                     
+                  </div>
+                  <div class="footer__links-column about-links-item">
+                     <h4 class="about-links-item__title">about</h4>                     
+                     <ul class="about-links-item__list">
+                        <li class="about-links-item__link-item">
+                           <a href="" class="about-links-item__link">Team</a>
+                        </li>
+                        <li class="about-links-item__link-item">
+                           <a href="" class="about-links-item__link">Join us</a>
+                        </li>
+                        <li class="about-links-item__link-item">
+                           <a href="" class="about-links-item__link">Ethic</a>
+                        </li>
+                        <li class="about-links-item__link-item">
+                           <a href="" class="about-links-item__link">Goals</a>
+                        </li>
+                     </ul>                     
+                  </div>
+               </nav>
+            </div>
+            
+         </div>
+         <div class="footer__copyright">
+            <a href="http://www.freepik.com" class="footer__freepik-link">Designed by Freepik</a>
+         </div>
+      </div>
+    </footer>
+
+</div>
+</body>
+
+</html>
